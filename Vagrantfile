@@ -31,7 +31,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ]
   )
 
-  config.vm.provision :shell, path: "config/vagrant/ruby_setup.sh"
+  config.vm.provision :shell, path: "config/vagrant/git_setup.sh"
+  config.vm.provision :shell, path: "config/vagrant/ruby_setup.sh", privileged: false
   config.vm.provision :shell, path: "config/vagrant/imagemagick_setup.sh"
   config.vm.provision :shell, path: "config/vagrant/capybara_webkit_dependency_setup.sh"
   config.vm.provision :shell, path: "config/vagrant/postgresql_setup.sh"
