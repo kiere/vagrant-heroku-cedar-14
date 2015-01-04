@@ -8,3 +8,6 @@ Based off project: https://github.com/jackdb/pg-app-dev-vm
 * Rubygems (currently 2.2.2)
 * Imagemagick
 * Capybara-webkit dependencies (QT, webkit)
+
+This box is published in Atlas as 'lazygray/heroku-cedar-14' and can be used simply by
+adding `config.vm.box = 'lazygray/heroku-cedar-14'` to your `Vagrantfile`.
