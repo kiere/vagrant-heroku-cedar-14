@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "=== Begin Vagrant Provisioning using 'config/vagrant/ruby_setup.sh'"
+echo "=== Begin Vagrant Provisioning using 'config/vagrant/rbenv_setup.sh'"
 
 RUBY_VERSION='2.1.5'
 GEMS_VERSION='2.2.2'
@@ -10,9 +10,6 @@ echo "===== Installing Ruby $RUBY_VERSION"
 
 # Start in the home directory
 cd
-
-# Install build dependencies for a sane build environment
-apt-get -y install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
 
 git clone git://github.com/sstephenson/rbenv.git .rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
@@ -41,4 +38,4 @@ if [ -z `which bundle` ]; then
   gem install bundler --no-rdoc --no-ri
 fi
 
-echo "=== End Vagrant Provisioning using 'config/vagrant/ruby_setup.sh'"
+echo "=== End Vagrant Provisioning using 'config/vagrant/rbenv_setup.sh'"

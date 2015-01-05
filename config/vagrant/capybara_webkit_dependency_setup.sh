@@ -48,6 +48,10 @@ EOF
   chmod +x /etc/init.d/xvfb
 fi
 
-/etc/init.d/xvfb start
+# Start xvfb at boot
+sed -i -e 's/exit 0//g' /etc/rc.local
+echo "su -c '/etc/init.d/xvfb start' vagrant" >> /etc/rc.local
+
+# /etc/init.d/xvfb start
 
 echo "=== End Vagrant Provisioning using 'config/vagrant/capybara_webkit_dependency_setup.sh'"
