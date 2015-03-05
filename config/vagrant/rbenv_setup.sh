@@ -38,4 +38,8 @@ if [ -z `which bundle` ]; then
   gem install bundler --no-rdoc --no-ri
 fi
 
+if [ -z `which foreman` ]; then
+  gem install foreman --no-rdoc --no-ri
+fi
+
 echo "=== End Vagrant Provisioning using 'config/vagrant/rbenv_setup.sh'"
